@@ -36,6 +36,7 @@ public class Entrada extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         Contenedor = new javax.swing.JPanel();
         Registro = new javax.swing.JPanel();
@@ -66,13 +67,19 @@ public class Entrada extends javax.swing.JFrame {
 
         jLabel3.setText("Email:");
 
+        jTextField2.addActionListener(this::jTextField2ActionPerformed);
+
         jLabel4.setText("Rol:");
 
-        jRadioButton1.setText("jRadioButton1");
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("voluntario");
+        jRadioButton1.addActionListener(this::jRadioButton1ActionPerformed);
 
-        jRadioButton2.setText("jRadioButton2");
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("veterinario");
 
-        jRadioButton3.setText("jRadioButton3");
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("familia adoptante");
 
         jButton3.setText("Registrarme");
         jButton3.addActionListener(this::jButton3ActionPerformed);
@@ -105,7 +112,7 @@ public class Entrada extends javax.swing.JFrame {
                         .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton4)
                             .addComponent(jButton3))))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         RegistroLayout.setVerticalGroup(
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,6 +257,21 @@ public class Entrada extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        String rol = "";
+        String email = "";
+
+        if (jRadioButton1.isSelected()) {
+        rol = "Voluntario";
+        } else if (jRadioButton2.isSelected()) {
+        rol = "Veterinario";
+        } else if (jRadioButton3.isSelected()) { 
+        rol = "Familia";
+        }
+        email = jTextField2.getText();
+        System.out.println("rol:" + rol + "email:" + email);
+
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -264,6 +286,15 @@ public class Entrada extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) Contenedor.getLayout();
         cl.show(Contenedor, "inicio");
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -295,6 +326,7 @@ public class Entrada extends javax.swing.JFrame {
     private javax.swing.JPanel Inicio;
     private javax.swing.JPanel Login;
     private javax.swing.JPanel Registro;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

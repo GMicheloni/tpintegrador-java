@@ -4,6 +4,7 @@
 
 package com.mycompany.tpintegrador;
 
+import com.mycompany.tpintegrador.persistencia.ControladorPersistencia;
 import com.mycompany.tpintegrador.vista.Entrada;
 
 
@@ -16,7 +17,8 @@ public class TpIntegrador {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        new Entrada().setVisible(true);
+        ControladorPersistencia controlPersis = new ControladorPersistencia();
+        
         
        
         
